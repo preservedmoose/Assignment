@@ -1,18 +1,20 @@
 import * as React from 'react';
 import CountersItem from './counters-item.component';
 
-// export interface Props {
-//     value: number;
-// }
+interface Stats {
+    counter: number;
+}
 
-class CountersList extends React.Component {
+class CountersList extends React.Component<{}, Stats> {
 
-    value: number;
+    // value: number;
 
     constructor(props: {}) {
         super(props);
 
-        this.value = 0;
+        this.state = {
+            counter: 0
+        };
 
         // handle 'this' for events
         this.incrementCounters = this.incrementCounters.bind(this);
@@ -20,27 +22,23 @@ class CountersList extends React.Component {
     }
 
     incrementCounters() {
-        this.value++;
-        this.forceUpdate();
+        this.setState({ counter: this.state.counter + 1 });
     }
 
     decrementCounters() {
-        this.value = (this.value > 0) ? this.value - 1 : this.value;
-        this.forceUpdate();
+        this.setState({ counter: (this.state.counter > 0) ? this.state.counter - 1 : this.state.counter });
     }
 
     render() {
         return (
             <div>
                 <CountersItem
-                    id={1}
-                    counter={this.value}
+                    counter={this.state.counter}
                     incrementCounters={this.incrementCounters}
                     decrementCounters={this.decrementCounters}
                 />
                 <CountersItem
-                    id={2}
-                    counter={this.value}
+                    counter={this.state.counter}
                     incrementCounters={this.incrementCounters}
                     decrementCounters={this.decrementCounters}
                 />

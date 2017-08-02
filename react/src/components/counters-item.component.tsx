@@ -1,17 +1,12 @@
 import * as React from 'react';
 
 interface Props {
-    id: number;
     counter: number;
     incrementCounters: () => void;
     decrementCounters: () => void;
 }
 
-class CountersItem extends React.Component<Props> {
-
-    constructor(props: Props) {
-        super(props);
-    }
+class CountersItem extends React.Component<Props, {}> {
 
     render() {
         return (
