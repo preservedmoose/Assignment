@@ -8,12 +8,15 @@ interface Props {
 
 class CountersItem extends React.Component<Props, {}> {
 
+    ic = () => this.props.incrementCounters();
+    dc = () => this.props.decrementCounters();
+
     render() {
         return (
             <div>
                 <h1>{this.props.counter}</h1>
-                <button onClick={() => this.props.incrementCounters()}>Increment</button>
-                <button onClick={() => this.props.decrementCounters()}>Decrement</button>
+                <button onClick={this.ic}>Increment</button>
+                <button onClick={this.dc}>Decrement</button>
             </div>
         );
     }
