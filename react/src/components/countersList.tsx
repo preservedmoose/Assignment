@@ -1,13 +1,11 @@
 import * as React from 'react';
-import CountersItem from './counters-item.component';
+import CountersItem from './countersItem';
 
 interface Stats {
     counter: number;
 }
 
 class CountersList extends React.Component<{}, Stats> {
-
-    // value: number;
 
     constructor(props: {}) {
         super(props);

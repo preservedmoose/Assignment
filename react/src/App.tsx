@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './App.css';
-import CountersList from './components/counters-list.component';
+import CountersList from './components/countersList';
 
 var appStyle = {
   textAlign: 'center'
