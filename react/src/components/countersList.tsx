@@ -1,13 +1,17 @@
 import * as React from 'react';
-import CountersItem from './countersItem';
+import { CountersItem } from './countersItem';
+
+interface Props {
+    numberOfCounters: number;
+}
 
 interface Stats {
     counter: number;
 }
 
-class CountersList extends React.Component<{}, Stats> {
+export class CountersList extends React.Component<Props, Stats> {
 
-    constructor(props: {}) {
+    constructor(props: Props) {
         super(props);
 
         this.state = {
@@ -44,5 +48,3 @@ class CountersList extends React.Component<{}, Stats> {
         );
     }
 }
-
-export default CountersList;

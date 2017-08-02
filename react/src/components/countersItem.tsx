@@ -6,7 +6,7 @@ interface Props {
     decrementCounters: () => void;
 }
 
-class CountersItem extends React.Component<Props, {}> {
+export class CountersItem extends React.Component<Props> {
 
     ic = () => this.props.incrementCounters();
     dc = () => this.props.decrementCounters();
@@ -21,5 +21,3 @@ class CountersItem extends React.Component<Props, {}> {
         );
     }
 }
-
-export default CountersItem;
